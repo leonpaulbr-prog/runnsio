@@ -69,15 +69,13 @@ if (consoleBody) {
 // ===========================
 const intScroll = document.getElementById('intScroll');
 if (intScroll) {
-  // Clone items for infinite loop
   const items = intScroll.innerHTML;
   intScroll.innerHTML = items + items;
   let pos = 0;
-  const itemH = 29; // approx height per item
-  const totalItems = intScroll.children.length / 2;
+  const totalH = intScroll.scrollHeight / 2;
   setInterval(() => {
-    pos += 0.5;
-    if (pos >= itemH * totalItems) pos = 0;
+    pos += 0.4;
+    if (pos >= totalH) pos = 0;
     intScroll.style.transform = `translateY(-${pos}px)`;
   }, 20);
 }
