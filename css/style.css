@@ -317,16 +317,16 @@ ul { list-style: none; }
 }
 .service-card {
   background: var(--bg3);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(56,182,255,0.2);
   border-radius: var(--radius);
   overflow: hidden;
   transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
-  box-shadow: var(--blue-shadow);
+  box-shadow: 0 0 0 1px rgba(56,182,255,0.06), inset 0 0 30px rgba(56,182,255,0.04);
 }
 .service-card:hover {
-  border-color: rgba(56,182,255,0.4);
+  border-color: rgba(56,182,255,0.45);
   transform: translateY(-4px);
-  box-shadow: var(--blue-shadow-hover);
+  box-shadow: 0 0 20px rgba(56,182,255,0.2), inset 0 0 30px rgba(56,182,255,0.06);
 }
 .service-card-top {
   padding: 24px;
@@ -454,13 +454,16 @@ ul { list-style: none; }
 }
 .process-card {
   background: var(--bg3);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(56,182,255,0.2);
   border-radius: var(--radius);
   padding: 32px;
   transition: border-color 0.3s, box-shadow 0.3s;
-  box-shadow: var(--blue-shadow);
+  box-shadow: 0 0 0 1px rgba(56,182,255,0.06), inset 0 0 30px rgba(56,182,255,0.04);
 }
-.process-card:hover { border-color: rgba(56,182,255,0.4); box-shadow: var(--blue-shadow-hover); }
+.process-card:hover {
+  border-color: rgba(56,182,255,0.45);
+  box-shadow: 0 0 20px rgba(56,182,255,0.2), inset 0 0 30px rgba(56,182,255,0.06);
+}
 .process-num {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 13px;
@@ -533,14 +536,28 @@ ul { list-style: none; }
 }
 .benefit-card {
   background: var(--bg3);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(56,182,255,0.2);
   border-radius: var(--radius);
   padding: 28px;
   transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
-  box-shadow: var(--blue-shadow);
+  box-shadow: 0 0 0 1px rgba(56,182,255,0.06), inset 0 0 30px rgba(56,182,255,0.04);
 }
-.benefit-card:hover { border-color: rgba(56,182,255,0.4); transform: translateY(-3px); box-shadow: var(--blue-shadow-hover); }
-.benefit-icon { margin-bottom: 14px; }
+.benefit-card:hover {
+  border-color: rgba(56,182,255,0.45);
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(56,182,255,0.2), inset 0 0 30px rgba(56,182,255,0.06);
+}
+.benefit-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
 .benefit-card h4 {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 18px;
@@ -588,13 +605,16 @@ ul { list-style: none; }
 .faq-list { margin-top: 48px; text-align: left; display: flex; flex-direction: column; gap: 12px; }
 .faq-item {
   background: var(--bg3);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(56,182,255,0.2);
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: var(--blue-shadow);
+  box-shadow: 0 0 0 1px rgba(56,182,255,0.08), inset 0 0 30px rgba(56,182,255,0.04);
   transition: box-shadow 0.3s, border-color 0.3s;
 }
-.faq-item:hover { border-color: rgba(56,182,255,0.3); box-shadow: var(--blue-shadow-hover); }
+.faq-item:hover {
+  border-color: rgba(56,182,255,0.45);
+  box-shadow: 0 0 16px rgba(56,182,255,0.2), inset 0 0 30px rgba(56,182,255,0.06);
+}
 .faq-q {
   width: 100%;
   display: flex;
