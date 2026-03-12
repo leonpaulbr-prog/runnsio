@@ -41,6 +41,7 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-bg-grid"></div>
+    <div class="hero-stars" id="heroStars"></div>
     <div class="hero-glow"></div>
     <div class="hero-circles">
       <div class="circle circle-1"></div>
@@ -48,12 +49,16 @@
       <div class="circle circle-3"></div>
     </div>
     <div class="container hero-content">
+      <div class="hero-badge reveal">
+        <span class="hero-badge-pill">Nuevo</span>
+        <span class="hero-badge-text">Sistemas digitales para empresas</span>
+      </div>
       <h1 class="hero-title reveal">
-        Sistemas digitales<br />que hacen crecer<br /><span class="accent">tu negocio.</span>
+        Sistemas digitales que hacen<br />crecer tu negocio.
       </h1>
       <p class="hero-sub reveal">Runns.IO pone la automatización de IA a tu alcance y agiliza las tareas.</p>
       <div class="hero-btns reveal">
-        <a href="#contact" class="btn-primary btn-hero">Hablemos</a>
+        <a href="#contact" class="btn-primary btn-hero">Hablemos ↗</a>
         <a href="#services" class="btn-outline btn-hero">Ver servicios</a>
       </div>
     </div>
@@ -96,81 +101,103 @@
   <!-- SERVICES -->
   <section class="section" id="services">
     <div class="container">
-      <p class="section-label reveal">Nuestros servicios</p>
-      <h2 class="section-title reveal">Servicios diseñados<br />para resultados</h2>
-      <p class="section-sub reveal">Diseñamos, desarrollamos e implementamos herramientas de automatización que le ayudan a trabajar de forma más inteligente, no más difícil.</p>
-      <div class="services-grid">
-
-        <div class="service-card reveal">
-          <div class="service-card-top">
-            <div class="service-mockup tasks-mockup">
-              <div class="mock-header">All Tasks</div>
-              <div class="mock-sub">Waiting for approval</div>
-              <ul class="mock-list">
-                <li><span class="mock-dot blue"></span>Payroll management <span class="mock-tag">Due 2nd july</span></li>
-                <li><span class="mock-dot grey"></span>Employee Tracking <span class="mock-tag grey">2 days ago</span></li>
-                <li><span class="mock-dot red"></span>Social media post <span class="mock-tag red">Cancelled</span></li>
-                <li><span class="mock-dot green"></span>Lead list <span class="mock-tag green">70% ready</span></li>
-                <li><span class="mock-dot blue"></span>Payment reminder <span class="mock-tag">Sent</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="service-card-body">
-            <span class="service-tag">Presencia Digital</span>
-            <h3>Más clientes encontrándote online</h3>
-            <p>Creamos y optimizamos tu presencia digital para que tus clientes te encuentren antes que a tu competencia.</p>
-            <div class="service-pills">
-              <span>Web</span><span>SEO</span><span>Landing pages</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-card-top">
-            <div class="service-mockup chat-mockup">
-              <div class="chat-bubble bot">¿En qué puedo ayudarte?</div>
-              <div class="chat-bubble user">Quiero automatizar mis emails</div>
-              <div class="chat-bubble bot typing"><span></span><span></span><span></span></div>
-              <div class="chat-actions">
-                <span>📎 Adjuntar</span>
-                <span>🔍 Analizar</span>
-                <span>🖼 Imagen</span>
-              </div>
-            </div>
-          </div>
-          <div class="service-card-body">
-            <span class="service-tag">Automatización</span>
-            <h3>Menos tareas manuales, más tiempo</h3>
-            <p>Automatizamos los procesos repetitivos de tu negocio para que tú y tu equipo os centréis en lo que importa.</p>
-            <div class="service-pills">
-              <span>Flujos digitales</span><span>Integraciones</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-card-top">
-            <div class="service-mockup email-mockup">
-              <div class="email-row"><span class="email-badge">LinkedIn</span><span class="email-badge">IT services</span><span class="email-badge">Founders</span></div>
-              <div class="email-sending">E-mail Sending...</div>
-              <ul class="email-list">
-                <li><span class="avatar">JD</span><div><b>Jack Daniel</b><small>justin@main.com</small></div><span class="verified">✓</span></li>
-                <li><span class="avatar teal">GC</span><div><b>Gorge Chapel</b><small>gorge@mail.com</small></div><span class="verified">✓</span></li>
-                <li><span class="avatar purple">MT</span><div><b>Mike Tylor</b><small>mike@Cmb.com</small></div><span class="verified">✓</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="service-card-body">
-            <span class="service-tag">Sistemas Digitales</span>
-            <h3>Un negocio que trabaja por ti</h3>
-            <p>Conectamos tu operación en un sistema digital que funciona solo, incluso cuando no estás.</p>
-            <div class="service-pills">
-              <span>Procesos</span><span>Escalabilidad</span>
-            </div>
-          </div>
-        </div>
-
+      <div class="services-header reveal">
+        <span class="section-badge">Nuestros servicios</span>
+        <h2 class="section-title-lg">Servicios diseñados para resultados</h2>
+        <p class="section-sub">Diseñamos, desarrollamos e implementamos herramientas de automatización que le ayudan a trabajar de forma más inteligente, no más difícil.</p>
       </div>
+
+      <!-- Servicio 1 -->
+      <div class="service-row reveal">
+        <div class="service-row-text">
+          <span class="service-badge">Presencia Digital</span>
+          <h3>Más clientes encontrándote online</h3>
+          <p>Creamos y optimizamos tu presencia digital para que tus clientes te encuentren antes que a tu competencia.</p>
+          <div class="service-pills">
+            <span>Web</span><span>SEO</span><span>Landing pages</span>
+          </div>
+        </div>
+        <div class="service-row-visual">
+          <div class="srv-mockup tasks-anim">
+            <div class="tasks-top">
+              <span class="tasks-title">All Tasks</span>
+              <span class="tasks-sub">Waiting for approval</span>
+            </div>
+            <ul class="tasks-list" id="tasksList">
+              <li class="task-item"><span class="task-icon">👤</span><div><b>Employee Tracking</b><small>2 days ago</small></div><span class="task-check">✓</span></li>
+              <li class="task-item"><span class="task-icon">📱</span><div><b>Social media post</b><small>Cancelled by user</small></div><span class="task-x">✕</span></li>
+              <li class="task-item"><span class="task-icon">📋</span><div><b>Lead list</b><small>70% prepared</small></div><span class="task-gear">⚙</span></li>
+              <li class="task-item"><span class="task-icon">⏰</span><div><b>Payment reminder</b><small>sent to selected clients</small></div><span class="task-check">✓</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Servicio 2 -->
+      <div class="service-row service-row-reverse reveal">
+        <div class="service-row-text">
+          <span class="service-badge">Automatización</span>
+          <h3>Menos tareas manuales, más tiempo</h3>
+          <p>Automatizamos los procesos repetitivos de tu negocio para que tú y tu equipo os centréis en lo que importa.</p>
+          <div class="service-pills">
+            <span>Flujos digitales</span><span>Integraciones</span>
+          </div>
+        </div>
+        <div class="service-row-visual">
+          <div class="srv-mockup chatbot-anim">
+            <div class="chatbot-orb">
+              <div class="orb-inner"></div>
+            </div>
+            <p class="chatbot-title">What can I help with?</p>
+            <p class="chatbot-sub">Whether you want help in customer handling or make changes in your system just give me command</p>
+            <div class="chatbot-input">
+              <span class="chatbot-typing" id="chatTyping"></span>
+              <span class="chatbot-cursor">|</span>
+            </div>
+            <div class="chatbot-actions">
+              <span>+ Add document</span>
+              <span>Analyze</span>
+              <span>Generate Image</span>
+              <span>research</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Servicio 3 -->
+      <div class="service-row reveal">
+        <div class="service-row-text">
+          <span class="service-badge">Sistemas Digitales</span>
+          <h3>Un negocio que trabaja por ti</h3>
+          <p>Conectamos tu operación en un sistema digital que funciona solo, incluso cuando no estás.</p>
+          <div class="service-pills">
+            <span>Procesos</span><span>Escalabilidad</span>
+          </div>
+        </div>
+        <div class="service-row-visual">
+          <div class="srv-mockup email-anim">
+            <div class="email-top-row">
+              <span class="email-sending-txt">E-mail Sending...</span>
+              <div class="email-spinner"></div>
+            </div>
+            <div class="email-tags"><span>LinkedIn</span><span>IT services</span><span>Founders</span></div>
+            <ul class="email-contacts">
+              <li><span class="av">JD</span><div><b>Jack Daniel</b><small>justin@main.com</small></div><span class="ev">Verified</span></li>
+              <li><span class="av teal">GC</span><div><b>Gorge Chapel</b><small>gorge@mail.com</small></div><span class="ev">Verified</span></li>
+              <li class="active-contact"><span class="av purple">MT</span><div><b>Mike Tylor</b><small>mike@Cmb.com</small></div><span class="ev">Verified</span></li>
+            </ul>
+            <div class="email-progress-wrap">
+              <div class="email-progress-bar" id="emailProgress"></div>
+            </div>
+            <div class="email-stages">
+              <span class="stage active">Draft</span>
+              <span class="stage">Schedule</span>
+              <span class="stage">Sent</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
