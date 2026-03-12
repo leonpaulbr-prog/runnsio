@@ -16,6 +16,73 @@ if (starsContainer) {
 }
 
 // ===========================
+// CONSOLE ANIMATION
+// ===========================
+const consoleBody = document.getElementById('consoleBody');
+if (consoleBody) {
+  const lines = [
+    { text: 'class ', cls: 'ckw' },
+    { text: 'AutomationTrigger', cls: 'cfn' },
+    { text: ':' },
+    { text: '  def ', cls: 'ckw', nl: true },
+    { text: '__init__', cls: 'cfn' },
+    { text: '(self, threshold):' },
+    { text: '    self.threshold = threshold', nl: true },
+    { text: '    self.status = ', nl: true },
+    { text: '"inactive"', cls: 'cstr' },
+    { text: '  def ', nl: true, cls: 'ckw' },
+    { text: 'check_trigger', cls: 'cfn' },
+    { text: '(self, value):' },
+    { text: '    if ', nl: true, cls: 'ckw' },
+    { text: 'value > self.threshold:' },
+    { text: '      return ', nl: true, cls: 'ckw' },
+    { text: '"Triggered!"', cls: 'cstr' },
+  ];
+  let lineIndex = 0;
+  function typeLine() {
+    if (lineIndex >= lines.length) {
+      setTimeout(() => { consoleBody.innerHTML = ''; lineIndex = 0; typeLine(); }, 2000);
+      return;
+    }
+    const l = lines[lineIndex];
+    if (l.nl) consoleBody.innerHTML += '<br/>';
+    const span = document.createElement('span');
+    if (l.cls) span.className = l.cls;
+    span.textContent = '';
+    consoleBody.appendChild(span);
+    let ci = 0;
+    const fullText = l.text;
+    const interval = setInterval(() => {
+      span.textContent += fullText[ci];
+      ci++;
+      if (ci >= fullText.length) { clearInterval(interval); lineIndex++; setTimeout(typeLine, 60); }
+    }, 40);
+  }
+  const consoleObserver = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) { consoleObserver.disconnect(); typeLine(); }
+  }, { threshold: 0.3 });
+  consoleObserver.observe(consoleBody);
+}
+
+// ===========================
+// INTEGRATIONS INFINITE SCROLL
+// ===========================
+const intScroll = document.getElementById('intScroll');
+if (intScroll) {
+  // Clone items for infinite loop
+  const items = intScroll.innerHTML;
+  intScroll.innerHTML = items + items;
+  let pos = 0;
+  const itemH = 29; // approx height per item
+  const totalItems = intScroll.children.length / 2;
+  setInterval(() => {
+    pos += 0.5;
+    if (pos >= itemH * totalItems) pos = 0;
+    intScroll.style.transform = `translateY(-${pos}px)`;
+  }, 20);
+}
+
+// ===========================
 // TASK LIST ANIMATION
 // ===========================
 function animateTasks() {
