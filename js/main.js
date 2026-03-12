@@ -65,22 +65,32 @@ if (consoleBody) {
 }
 
 // ===========================
-// INTEGRATIONS INFINITE SCROLL
+// APP ICON SWITCHER
 // ===========================
-const intScroll = document.getElementById('intScroll');
-if (intScroll) {
-  const original = intScroll.innerHTML;
-  intScroll.innerHTML = original + original + original;
-  let pos = 0;
-  let totalH = 0;
-  setTimeout(() => {
-    totalH = intScroll.scrollHeight / 3;
-    setInterval(() => {
-      pos += 0.4;
-      if (pos >= totalH) pos = 0;
-      intScroll.style.transform = `translateY(-${pos}px)`;
-    }, 20);
-  }, 100);
+const appIcon = document.getElementById('appIcon');
+const appEmoji = document.getElementById('appEmoji');
+const appLabel = document.getElementById('appLabel');
+if (appIcon && appEmoji && appLabel) {
+  const apps = [
+    { emoji: '📧', name: 'Gmail' },
+    { emoji: '💬', name: 'Slack' },
+    { emoji: '🤖', name: 'ChatGPT' },
+    { emoji: '🎮', name: 'Discord' },
+    { emoji: '📅', name: 'Calendar' },
+    { emoji: '⚡', name: 'Zapier' },
+    { emoji: '🔧', name: 'n8n' },
+    { emoji: '🔗', name: 'Make' },
+  ];
+  let i = 0;
+  setInterval(() => {
+    appIcon.classList.add('fade');
+    setTimeout(() => {
+      i = (i + 1) % apps.length;
+      appEmoji.textContent = apps[i].emoji;
+      appLabel.textContent = apps[i].name;
+      appIcon.classList.remove('fade');
+    }, 400);
+  }, 2000);
 }
 
 // ===========================
