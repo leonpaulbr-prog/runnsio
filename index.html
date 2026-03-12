@@ -204,62 +204,105 @@
   <!-- PROCESS -->
   <section class="section section-dark" id="process">
     <div class="container">
-      <p class="section-label reveal">Nuestro proceso</p>
-      <h2 class="section-title reveal">Simple, inteligente<br />y escalable</h2>
+      <div class="services-header reveal">
+        <span class="section-badge">Nuestro proceso</span>
+        <h2 class="section-title-lg">Nuestro proceso simple,<br />inteligente y escalable</h2>
+        <p class="section-sub" style="margin:0 auto">Diseñamos e implementamos sistemas digitales adaptados a tu negocio.</p>
+      </div>
       <div class="process-grid">
 
+        <!-- Paso 1: Radar -->
         <div class="process-card reveal">
-          <div class="process-num">01</div>
+          <div class="proc-step">Paso 1</div>
           <h3>Análisis inicial</h3>
           <p>Estudiamos tu negocio e identificamos dónde están las oportunidades de mejora.</p>
-          <div class="process-visual">
-            <div class="check-row"><span class="check-icon">✓</span> System check</div>
-            <div class="check-row"><span class="check-icon">✓</span> Process check</div>
-            <div class="check-row loading"><span class="spinner"></span> Speed check</div>
-            <div class="check-row warn"><span class="warn-icon">!</span> Manual work detected</div>
+          <div class="proc-visual">
+            <div class="radar-wrap">
+              <div class="radar-circles">
+                <div class="radar-c r1"></div>
+                <div class="radar-c r2"></div>
+                <div class="radar-c r3"></div>
+              </div>
+              <div class="radar-sweep"></div>
+              <div class="radar-center"></div>
+            </div>
+            <div class="radar-checks">
+              <div class="rc-row done"><span>✓</span> System check</div>
+              <div class="rc-row done"><span>✓</span> Process check</div>
+              <div class="rc-row done"><span>✓</span> Speed check</div>
+              <div class="rc-row done"><span>✓</span> Manual work</div>
+              <div class="rc-row done"><span>✓</span> Repetative task</div>
+            </div>
+            <p class="radar-label">Analyzing current workflow...</p>
           </div>
         </div>
 
+        <!-- Paso 2: Consola de código animada -->
         <div class="process-card reveal">
-          <div class="process-num">02</div>
+          <div class="proc-step">Paso 2</div>
           <h3>Desarrollo a medida</h3>
           <p>Construimos los sistemas digitales adaptados exactamente a lo que tu negocio necesita.</p>
-          <div class="process-visual code-visual">
-            <pre><code><span class="kw">class</span> <span class="fn">AutomationTrigger</span>:
-  <span class="kw">def</span> <span class="fn">__init__</span>(self, threshold):
-    self.threshold = threshold
-    self.status = <span class="str">"inactive"</span>
-
-  <span class="kw">def</span> <span class="fn">check_trigger</span>(self, value):
-    <span class="kw">if</span> value > self.threshold:
-      <span class="kw">return</span> <span class="str">"Triggered!"</span></code></pre>
+          <div class="proc-visual">
+            <div class="console-wrap">
+              <div class="console-bar">
+                <span class="cb r"></span><span class="cb y"></span><span class="cb g"></span>
+              </div>
+              <div class="console-body" id="consoleBody"></div>
+            </div>
           </div>
         </div>
 
+        <!-- Paso 3: Orbe + stack de integraciones -->
         <div class="process-card reveal">
-          <div class="process-num">03</div>
+          <div class="proc-step">Paso 3</div>
           <h3>Integración sin fricciones</h3>
           <p>Implementamos la solución en tu operación actual sin interrumpir tu día a día.</p>
-          <div class="process-visual integrations-visual">
-            <div class="integration-row">
-              <div class="int-box">Tu stack</div>
-              <div class="int-arrow">→</div>
-              <div class="int-box accent-box">Nuestra solución</div>
+          <div class="proc-visual proc-integrations">
+            <div class="proc-int-col">
+              <div class="proc-orb">
+                <div class="proc-orb-ring r1"></div>
+                <div class="proc-orb-ring r2"></div>
+                <div class="proc-orb-core"></div>
+              </div>
+              <span class="proc-int-label">Our solution</span>
             </div>
-            <div class="int-tags">
-              <span>Zapier</span><span>n8n</span><span>Make</span><span>API REST</span>
+            <div class="proc-int-col">
+              <div class="integrations-scroll" id="intScroll">
+                <div class="int-item">⚡ Zapier</div>
+                <div class="int-item">🔧 n8n</div>
+                <div class="int-item">💬 Slack</div>
+                <div class="int-item">🤖 ChatGPT</div>
+                <div class="int-item">💬 Discord</div>
+                <div class="int-item">📧 Gmail</div>
+                <div class="int-item">📅 Calendar</div>
+                <div class="int-item">🔗 Make</div>
+              </div>
+              <span class="proc-int-label">Your stack</span>
             </div>
           </div>
         </div>
 
+        <!-- Paso 4: Métricas animadas -->
         <div class="process-card reveal">
-          <div class="process-num">04</div>
+          <div class="proc-step">Paso 4</div>
           <h3>Optimización continua</h3>
           <p>Analizamos resultados y ajustamos para que el sistema mejore con el tiempo.</p>
-          <div class="process-visual metrics-visual">
-            <div class="metric-row"><span>Chatbot system</span><span class="metric-up">↑ +20%</span></div>
-            <div class="metric-row"><span>Workflow system</span><span class="metric-warn">Update available</span></div>
-            <div class="metric-row"><span>Sales system</span><span class="metric-ok">✓ Up to date</span></div>
+          <div class="proc-visual">
+            <div class="metric-card">
+              <div class="metric-icon">💬</div>
+              <div class="metric-info"><b>Chatbot system</b><small>Efficiency will increase by 20%</small></div>
+              <div class="metric-spinner"></div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-icon">⚙️</div>
+              <div class="metric-info"><b>Workflow system</b><small>Update available...</small></div>
+              <div class="metric-arrow">↑</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-icon">📊</div>
+              <div class="metric-info"><b>Sales system</b><small>Up to date</small></div>
+              <div class="metric-tick">✓</div>
+            </div>
           </div>
         </div>
 
