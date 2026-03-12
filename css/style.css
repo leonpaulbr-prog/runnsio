@@ -703,6 +703,7 @@ ul { list-style: none; }
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 20px;
+  overflow: hidden;
 }
 
 /* RADAR */
@@ -764,8 +765,8 @@ ul { list-style: none; }
 .console-cursor { display: inline-block; width: 7px; height: 13px; background: #38B6FF; animation: blink 0.8s step-end infinite; vertical-align: text-bottom; }
 
 /* INTEGRATIONS */
-.proc-integrations { display: flex; gap: 20px; justify-content: center; align-items: flex-start; }
-.proc-int-col { display: flex; flex-direction: column; align-items: center; gap: 10px; flex: 1; }
+.proc-integrations { display: flex; gap: 20px; justify-content: center; align-items: flex-start; overflow: hidden; }
+.proc-int-col { display: flex; flex-direction: column; align-items: center; gap: 10px; flex: 1; overflow: hidden; }
 .proc-int-label { font-size: 11px; color: var(--muted); }
 .proc-orb {
   position: relative;
@@ -804,6 +805,7 @@ ul { list-style: none; }
   flex-direction: column;
   gap: 4px;
   width: 100%;
+  position: relative;
 }
 .int-item {
   font-size: 11px;
