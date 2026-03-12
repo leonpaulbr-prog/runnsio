@@ -1,4 +1,71 @@
 // ===========================
+// STARS GENERATION
+// ===========================
+const starsContainer = document.getElementById('heroStars');
+if (starsContainer) {
+  for (let i = 0; i < 120; i++) {
+    const star = document.createElement('span');
+    star.style.left = Math.random() * 100 + '%';
+    star.style.top = Math.random() * 100 + '%';
+    star.style.animationDelay = Math.random() * 4 + 's';
+    star.style.animationDuration = (2 + Math.random() * 3) + 's';
+    star.style.width = (Math.random() > 0.7 ? 3 : 2) + 'px';
+    star.style.height = star.style.width;
+    starsContainer.appendChild(star);
+  }
+}
+
+// ===========================
+// TASK LIST ANIMATION
+// ===========================
+function animateTasks() {
+  const items = document.querySelectorAll('.task-item');
+  items.forEach((item, i) => {
+    item.classList.remove('visible');
+    setTimeout(() => item.classList.add('visible'), i * 300);
+  });
+}
+const tasksObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) animateTasks();
+  });
+}, { threshold: 0.3 });
+const tasksList = document.querySelector('.tasks-anim');
+if (tasksList) tasksObserver.observe(tasksList);
+
+// ===========================
+// CHATBOT TYPING ANIMATION
+// ===========================
+const chatTyping = document.getElementById('chatTyping');
+if (chatTyping) {
+  const phrases = ['Sch...', 'Schedule email...', 'Send to leads...', 'Automate workflow...'];
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let deleting = false;
+  function typeWriter() {
+    const current = phrases[phraseIndex];
+    if (!deleting) {
+      chatTyping.textContent = current.substring(0, charIndex + 1);
+      charIndex++;
+      if (charIndex === current.length) {
+        deleting = true;
+        setTimeout(typeWriter, 1200);
+        return;
+      }
+    } else {
+      chatTyping.textContent = current.substring(0, charIndex - 1);
+      charIndex--;
+      if (charIndex === 0) {
+        deleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+      }
+    }
+    setTimeout(typeWriter, deleting ? 60 : 100);
+  }
+  typeWriter();
+}
+
+// ===========================
 // NAVBAR SCROLL
 // ===========================
 const navbar = document.getElementById('navbar');
