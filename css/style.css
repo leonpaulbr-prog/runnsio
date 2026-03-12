@@ -806,6 +806,8 @@ ul { list-style: none; }
   gap: 4px;
   width: 100%;
   position: relative;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
 }
 .int-item {
   font-size: 11px;
