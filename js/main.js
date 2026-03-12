@@ -69,15 +69,18 @@ if (consoleBody) {
 // ===========================
 const intScroll = document.getElementById('intScroll');
 if (intScroll) {
-  const items = intScroll.innerHTML;
-  intScroll.innerHTML = items + items;
+  const original = intScroll.innerHTML;
+  intScroll.innerHTML = original + original + original;
   let pos = 0;
-  const totalH = intScroll.scrollHeight / 2;
-  setInterval(() => {
-    pos += 0.4;
-    if (pos >= totalH) pos = 0;
-    intScroll.style.transform = `translateY(-${pos}px)`;
-  }, 20);
+  let totalH = 0;
+  setTimeout(() => {
+    totalH = intScroll.scrollHeight / 3;
+    setInterval(() => {
+      pos += 0.4;
+      if (pos >= totalH) pos = 0;
+      intScroll.style.transform = `translateY(-${pos}px)`;
+    }, 20);
+  }, 100);
 }
 
 // ===========================
