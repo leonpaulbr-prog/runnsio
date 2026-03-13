@@ -1185,20 +1185,49 @@ ul { list-style: none; }
   .services-header { margin-bottom: 32px; }
 
 }
-#scrollTopBtn {
+.scroll-top-btn {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 50px;
-  height: 50px;
-  background: black;
-  color: white;
-  border: none;
+  bottom: 32px;
+  right: 32px;
+
+  width: 52px;
+  height: 52px;
+
   border-radius: 50%;
-  font-size: 22px;
-  cursor: pointer;
+  border: 1px solid #38B6FF;
+
+  background: rgba(56, 182, 255, 0.05);
+  backdrop-filter: blur(6px);
+
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 99999;
+
+  cursor: pointer;
+
+  transition: all 0.35s ease;
+
+  box-shadow: 
+    0 0 0 1px rgba(56,182,255,0.15),
+    0 4px 14px rgba(0,0,0,0.5);
+}
+
+.scroll-top-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: #38B6FF;
+  transition: transform 0.3s ease;
+}
+
+/* Hover premium */
+.scroll-top-btn:hover {
+  background: rgba(56, 182, 255, 0.12);
+  box-shadow: 
+    0 0 12px rgba(56,182,255,0.4),
+    0 0 24px rgba(56,182,255,0.2);
+  transform: translateY(-4px);
+}
+
+.scroll-top-btn:hover svg {
+  transform: translateY(-2px);
 }
