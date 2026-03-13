@@ -466,29 +466,10 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <button id="scrollTopBtn">↑</button>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-const scrollBtn = document.getElementById("scrollTopBtn");
-
-window.addEventListener("scroll", function () {
-  if (window.scrollY > 200) {
-    scrollBtn.style.display = "flex";
-  } else {
-    scrollBtn.style.display = "none";
-  }
-});
-
-scrollBtn.addEventListener("click", function () {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-});
-
-});
-</script>
+<button class="scroll-top-btn" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+  <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+    <path d="M6 15l6-6 6 6" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
   </body>
 </html>
