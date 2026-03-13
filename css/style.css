@@ -7,7 +7,7 @@
   --bg3: #141414;
   --border: rgba(255,255,255,0.08);
   --text: #f0f0f0;
-  --muted: #888;
+  --muted: #aaa;
   --accent: #38B6FF;
   --accent2: #1a9de8;
   --white: #ffffff;
@@ -299,8 +299,8 @@ ul { list-style: none; }
 }
 .hero-title .accent { color: var(--accent); }
 .hero-sub {
-  font-size: 17px;
-  color: rgba(255,255,255,0.55);
+  font-size: 18px;
+  color: rgba(255,255,255,0.7);
   max-width: 480px;
   margin: 0 auto 40px;
 }
@@ -373,7 +373,7 @@ ul { list-style: none; }
   margin-bottom: 20px;
 }
 .section-sub {
-  font-size: 16px;
+  font-size: 17px;
   color: var(--muted);
   max-width: 560px;
   margin-bottom: 60px;
@@ -432,7 +432,7 @@ ul { list-style: none; }
   letter-spacing: -0.5px;
   margin-bottom: 14px;
 }
-.service-row-text p { font-size: 15px; color: var(--muted); margin-bottom: 20px; line-height: 1.7; }
+.service-row-text p { font-size: 16px; color: var(--muted); margin-bottom: 20px; line-height: 1.7; }
 .service-pills { display: flex; flex-wrap: wrap; gap: 8px; }
 .service-pills span {
   font-size: 13px;
@@ -709,7 +709,7 @@ ul { list-style: none; }
   line-height: 1.2;
 }
 .process-card p {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--muted);
   line-height: 1.6;
   margin-bottom: 20px;
@@ -954,7 +954,7 @@ ul { list-style: none; }
   text-transform: uppercase;
   margin-bottom: 10px;
 }
-.benefit-card p { font-size: 14px; color: var(--muted); }
+.benefit-card p { font-size: 15px; color: var(--muted); }
 
 /* ===========================
    CONTACT
@@ -1026,7 +1026,7 @@ ul { list-style: none; }
 .faq-a {
   max-height: 0;
   overflow: hidden;
-  font-size: 14px;
+  font-size: 15px;
   color: var(--muted);
   padding: 0 20px;
   transition: max-height 0.3s ease, padding 0.3s ease;
