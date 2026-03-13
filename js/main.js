@@ -251,3 +251,27 @@ scrollBtn.addEventListener("click", () => {
   });
 });
 }
+// =============================
+// SCROLL TO TOP BUTTON
+// =============================
+
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+
+  if (window.scrollY > 450) {
+    scrollBtn.classList.add("show");
+  } else {
+    scrollBtn.classList.remove("show");
+  }
+
+});
+
+scrollBtn.addEventListener("click", () => {
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+});
