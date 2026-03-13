@@ -466,10 +466,29 @@
   </footer>
 
   <script src="js/main.js"></script>
-  
-  <button id="scrollTopBtn" aria-label="Volver arriba">
-  ↑
-</button>
-  
-</body>
+  <button id="scrollTopBtn">↑</button>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 200) {
+    scrollBtn.style.display = "flex";
+  } else {
+    scrollBtn.style.display = "none";
+  }
+});
+
+scrollBtn.addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
+});
+</script>
+  </body>
 </html>
