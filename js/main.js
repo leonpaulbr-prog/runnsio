@@ -206,15 +206,48 @@ document.querySelectorAll('.faq-q').forEach(btn => {
 // ===========================
 // CONTACT FORM
 // ===========================
-document.getElementById('contactForm').addEventListener('submit', (e) => {
+document.getElementById('contactForm').addEventListener('submit', async (e) => {
   e.preventDefault();
-  const btn = e.target.querySelector('button[type="submit"]');
-  btn.textContent = '✓ Mensaje enviado';
-  btn.style.background = '#2ecc71';
+
+  const form = e.target;
+  const btn = form.querySelector('button[type="submit"]');
+
+  // ⚡ Capturar datos
+  const data = {
+    name: form.querySelector('[name="name"]')?.value || '',
+    email: form.querySelector('[name="email"]')?.value || '',
+    phone: form.querySelector('[name="phone"]')?.value || '',
+    message: form.querySelector('[name="message"]')?.value || ''
+  };
+
+  try {
+    btn.textContent = 'Enviando...';
+
+    const response = await fetch('https://n8n-n8n.2pjtbr.easypanel.host/webhook/lead', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+
+    if (!response.ok) {
+      throw new Error('Error en el servidor');
+    }
+
+    btn.textContent = '✓ Mensaje enviado';
+    btn.style.background = '#2ecc71';
+    form.reset();
+
+  } catch (error) {
+    console.error(error);
+    btn.textContent = 'Error al enviar';
+    btn.style.background = '#e74c3c';
+  }
+
   setTimeout(() => {
     btn.textContent = 'Enviar mensaje';
     btn.style.background = '';
-    e.target.reset();
   }, 3000);
 });
 
