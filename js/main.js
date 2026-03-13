@@ -282,7 +282,7 @@ scrollBtn.addEventListener("click", () => {
     behavior: "smooth"
   });
 });
-}
+
 // =============================
 // SCROLL TO TOP BUTTON
 // =============================
