@@ -409,8 +409,10 @@ ul { list-style: none; }
   padding: 60px 0;
   border-top: 1px solid var(--border);
 }
-.service-row-reverse { direction: rtl; }
-.service-row-reverse > * { direction: ltr; }
+.service-row .service-row-text { order: 2; }
+.service-row .service-row-visual { order: 1; }
+.service-row-reverse { direction: unset; }
+.service-row-reverse > * { direction: unset; }
 .service-row-text {}
 .service-badge {
   display: inline-block;
@@ -701,9 +703,13 @@ ul { list-style: none; }
 .proc-visual {
   background: #0a0a0a;
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 20px;
+  border-radius: 10px;
+  padding: 14px;
   overflow: hidden;
+  transform: scale(0.88);
+  transform-origin: top center;
+  margin-top: -4px;
+  opacity: 0.85;
 }
 
 /* RADAR */
