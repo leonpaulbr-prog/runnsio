@@ -1187,16 +1187,16 @@ ul { list-style: none; }
 }
 .scroll-top-btn {
   position: fixed;
-  bottom: 32px;
-  right: 32px;
+  bottom: calc(20px + env(safe-area-inset-bottom));
+  right: 20px;
 
-  width: 52px;
-  height: 52px;
+  width: 42px;
+  height: 42px;
 
   border-radius: 50%;
   border: 1px solid #38B6FF;
 
-  background: rgba(56, 182, 255, 0.05);
+  background: rgba(56,182,255,0.05);
   backdrop-filter: blur(6px);
 
   display: flex;
@@ -1205,29 +1205,31 @@ ul { list-style: none; }
 
   cursor: pointer;
 
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+
   transition: all 0.35s ease;
 
-  box-shadow: 
-    0 0 0 1px rgba(56,182,255,0.15),
-    0 4px 14px rgba(0,0,0,0.5);
+  z-index: 9999;
 }
 
 .scroll-top-btn svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   stroke: #38B6FF;
-  transition: transform 0.3s ease;
 }
 
-/* Hover premium */
 .scroll-top-btn:hover {
-  background: rgba(56, 182, 255, 0.12);
-  box-shadow: 
-    0 0 12px rgba(56,182,255,0.4),
-    0 0 24px rgba(56,182,255,0.2);
-  transform: translateY(-4px);
+  background: rgba(56,182,255,0.12);
+  box-shadow: 0 0 14px rgba(56,182,255,0.35);
+  transform: translateY(-3px);
 }
 
-.scroll-top-btn:hover svg {
-  transform: translateY(-2px);
+/* cuando aparece */
+
+.scroll-top-btn.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
