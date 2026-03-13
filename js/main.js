@@ -212,12 +212,11 @@ document.getElementById('contactForm').addEventListener('submit', async (e) => {
   const form = e.target;
   const btn = form.querySelector('button[type="submit"]');
 
-  // ⚡ Capturar datos
   const data = {
-    name: form.querySelector('[name="name"]')?.value || '',
+    nombre: form.querySelector('[name="nombre"]')?.value || '',
     email: form.querySelector('[name="email"]')?.value || '',
-    phone: form.querySelector('[name="phone"]')?.value || '',
-    message: form.querySelector('[name="message"]')?.value || ''
+    telefono: form.querySelector('[name="telefono"]')?.value || '',
+    mensaje: form.querySelector('[name="mensaje"]')?.value || ''
   };
 
   try {
