@@ -232,7 +232,9 @@ document.getElementById('contactForm').addEventListener('submit', async (e) => {
     nombre: form.querySelector('[name="nombre"]')?.value || '',
     email: form.querySelector('[name="email"]')?.value || '',
     telefono: form.querySelector('[name="telefono"]')?.value || '',
-    mensaje: form.querySelector('[name="mensaje"]')?.value || ''
+    mensaje: form.querySelector('[name="mensaje"]')?.value || '',
+    fecha: new Date().toISOString(),
+    origen: 'runns.io'
   };
 
   try {
