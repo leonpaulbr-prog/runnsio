@@ -190,7 +190,8 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 
 reveals.forEach(el => revealObserver.observe(el));
-// Forzar visibilidad inicial
+
+// Forzar visibilidad en elementos ya visibles al cargar
 setTimeout(() => {
   reveals.forEach(el => {
     const rect = el.getBoundingClientRect();
