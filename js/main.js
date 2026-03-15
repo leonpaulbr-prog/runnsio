@@ -192,14 +192,20 @@ const revealObserver = new IntersectionObserver((entries) => {
 reveals.forEach(el => revealObserver.observe(el));
 
 // Forzar visibilidad en elementos ya visibles al cargar
-window.addEventListener('load', () => {
+function forceRevealVisible() {
   reveals.forEach(el => {
     const rect = el.getBoundingClientRect();
     if (rect.top < window.innerHeight) {
       el.classList.add('visible');
     }
   });
-});
+}
+
+if (document.readyState === 'complete') {
+  forceRevealVisible();
+} else {
+  window.addEventListener('load', forceRevealVisible);
+}
 
 // ===========================
 // FAQ ACCORDION
