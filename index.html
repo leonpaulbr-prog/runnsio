@@ -396,60 +396,8 @@
             <label>¿Qué proceso te gustaría automatizar?</label>
             <textarea name="mensaje" rows="4" placeholder="Cuéntanos tu caso..."></textarea>
           </div>
-          <button type="submit" class="btn-primary full-width" id="submitBtn">Enviar mensaje</button>
-          <div id="formFeedback" style="display:none; margin-top:12px; padding:12px 16px; border-radius:8px; font-size:0.95rem; text-align:center;"></div>
+          <button type="submit" class="btn-primary full-width">Enviar mensaje</button>
         </form>
-
-  <script>
-    (function () {
-      var WEBHOOK_URL = https://n8n.runnsio.com/webhook/webleads;
-
-      document.getElementById('contactForm').addEventListener('submit', async function (e) {
-        e.preventDefault();
-
-        var btn = document.getElementById('submitBtn');
-        var feedback = document.getElementById('formFeedback');
-        var form = this;
-
-        // Estado: enviando
-        btn.disabled = true;
-        btn.textContent = 'Enviando...';
-        feedback.style.display = 'none';
-
-        var payload = {
-          nombre:    form.nombre.value.trim(),
-          email:     form.email.value.trim(),
-          telefono:  form.telefono.value.trim(),
-          mensaje:   form.mensaje.value.trim(),
-          fecha:     new Date().toISOString(),
-          origen:    'runns.io'
-        };
-
-        try {
-          var res = await fetch(WEBHOOK_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-          });
-
-          if (res.ok) {
-            feedback.style.cssText = 'display:block; margin-top:12px; padding:12px 16px; border-radius:8px; font-size:0.95rem; text-align:center; background:#0d2a1f; color:#4ade80; border:1px solid #166534;';
-            feedback.textContent = '✓ Mensaje enviado. Te contactamos pronto.';
-            form.reset();
-          } else {
-            throw new Error('HTTP ' + res.status);
-          }
-        } catch (err) {
-          feedback.style.cssText = 'display:block; margin-top:12px; padding:12px 16px; border-radius:8px; font-size:0.95rem; text-align:center; background:#2a0d0d; color:#f87171; border:1px solid #991b1b;';
-          feedback.textContent = '✕ Error al enviar. Inténtalo de nuevo o escríbenos directamente.';
-          console.error('Webhook error:', err);
-        } finally {
-          btn.disabled = false;
-          btn.textContent = 'Enviar mensaje';
-        }
-      });
-    })();
-  </script>
       </div>
     </div>
   </section>
