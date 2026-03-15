@@ -187,9 +187,9 @@
             </div>
             <div class="email-tags"><span>LinkedIn</span><span>IT services</span><span>Founders</span></div>
             <ul class="email-contacts">
-              <li><span class="av">JD</span><div><b>Jack Daniel</b><small>justin@main.com</small></div><span class="ev">Verified</span></li>
-              <li><span class="av teal">GC</span><div><b>Gorge Chapel</b><small>gorge@mail.com</small></div><span class="ev">Verified</span></li>
-              <li class="active-contact"><span class="av purple">MT</span><div><b>Mike Tylor</b><small>mike@Cmb.com</small></div><span class="ev">Verified</span></li>
+              <li><span class="av">JD</span><div><b>Jack Daniel</b><small><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c5afb0b6b1acab85a8a4acabeba6aaa8">[email&#160;protected]</a></small></div><span class="ev">Verified</span></li>
+              <li><span class="av teal">GC</span><div><b>Gorge Chapel</b><small><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="60070f120705200d01090c4e030f0d">[email&#160;protected]</a></small></div><span class="ev">Verified</span></li>
+              <li class="active-contact"><span class="av purple">MT</span><div><b>Mike Tylor</b><small><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d0bdb9bbb59093bdb2feb3bfbd">[email&#160;protected]</a></small></div><span class="ev">Verified</span></li>
             </ul>
             <div class="email-progress-wrap">
               <div class="email-progress-bar" id="emailProgress"></div>
@@ -396,8 +396,60 @@
             <label>¿Qué proceso te gustaría automatizar?</label>
             <textarea name="mensaje" rows="4" placeholder="Cuéntanos tu caso..."></textarea>
           </div>
-          <button type="submit" class="btn-primary full-width">Enviar mensaje</button>
+          <button type="submit" class="btn-primary full-width" id="submitBtn">Enviar mensaje</button>
+          <div id="formFeedback" style="display:none; margin-top:12px; padding:12px 16px; border-radius:8px; font-size:0.95rem; text-align:center;"></div>
         </form>
+
+  <script>
+    (function () {
+      var WEBHOOK_URL = https://n8n.runnsio.com/webhook/webleads;
+
+      document.getElementById('contactForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        var btn = document.getElementById('submitBtn');
+        var feedback = document.getElementById('formFeedback');
+        var form = this;
+
+        // Estado: enviando
+        btn.disabled = true;
+        btn.textContent = 'Enviando...';
+        feedback.style.display = 'none';
+
+        var payload = {
+          nombre:    form.nombre.value.trim(),
+          email:     form.email.value.trim(),
+          telefono:  form.telefono.value.trim(),
+          mensaje:   form.mensaje.value.trim(),
+          fecha:     new Date().toISOString(),
+          origen:    'runns.io'
+        };
+
+        try {
+          var res = await fetch(WEBHOOK_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+
+          if (res.ok) {
+            feedback.style.cssText = 'display:block; margin-top:12px; padding:12px 16px; border-radius:8px; font-size:0.95rem; text-align:center; background:#0d2a1f; color:#4ade80; border:1px solid #166534;';
+            feedback.textContent = '✓ Mensaje enviado. Te contactamos pronto.';
+            form.reset();
+          } else {
+            throw new Error('HTTP ' + res.status);
+          }
+        } catch (err) {
+          feedback.style.cssText = 'display:block; margin-top:12px; padding:12px 16px; border-radius:8px; font-size:0.95rem; text-align:center; background:#2a0d0d; color:#f87171; border:1px solid #991b1b;';
+          feedback.textContent = '✕ Error al enviar. Inténtalo de nuevo o escríbenos directamente.';
+          console.error('Webhook error:', err);
+        } finally {
+          btn.disabled = false;
+          btn.textContent = 'Enviar mensaje';
+        }
+      });
+    })();
+  </script>
       </div>
     </div>
   </section>
@@ -459,17 +511,4 @@
         </div>
         <div class="footer-col">
           <h5>Redes</h5>
-          <a href="https://instagram.com" target="_blank">Instagram</a>
-          <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-          <a href="https://x.com" target="_blank">Twitter / X</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2025 RUNNSio. Todos los derechos reservados.</p>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
-</body>
-</html>
+          <a href="https://instagram.com" target="_blank">Instagram
