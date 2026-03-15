@@ -238,7 +238,7 @@ document.getElementById('contactForm').addEventListener('submit', async (e) => {
   try {
     btn.textContent = 'Enviando...';
 
-    const response = await fetch('https://n8n.runnsio.com/webhook/lead', {
+    const response = await fetch('https://n8n.runnsio.com/webhook/webleads', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
