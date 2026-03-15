@@ -190,6 +190,15 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 
 reveals.forEach(el => revealObserver.observe(el));
+// Forzar visibilidad inicial
+setTimeout(() => {
+  reveals.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      el.classList.add('visible');
+    }
+  });
+}, 100);
 
 // ===========================
 // FAQ ACCORDION
